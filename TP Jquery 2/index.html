@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.6.0/minty/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>exercice tp</title>
+</head>
+<body class="bg-light">
+
+<h1 class="text-center text-white display-3">TP LE BON BULLETIN</h1>
+     <div class ="container text-center ">
+      <div class ="jumbotron jumbotron-fluid ">
+         <div class ="container ">
+        Demander à l'aide d'un formulaire les 5 dernières notes d'un élève.
+        Calculer sa moyenne et déterminer son appréciation.
+        <div class="row">
+            <div class="px-5 col-lg-6 text-center text-dark">
+                <ul>
+                    <li>Si la moyenne de l'élève est supérieure ou égale à 0 et inférieure à 10, il aura comme
+                        appréciation : "En dessous de la moyenne".</li>
+                    <li>Si la moyenne de l'élève est supérieure ou égale à 10 et inférieure à 13, il aura comme
+                        appréciation : "Moyen".</li>
+                    <li>Si la moyenne de l'élève est supérieure ou égale à 13 et inférieure à 16, il aura comme
+                        appréciation : "Bien".</li> 
+                    <li>Si la moyenne de l'élève est supérieure ou égale à 16 et inférieure à 20, il aura comme
+                        appréciation : "Très bien".ciation : "Très Bien".</li>
+                    <li>• Si la moyenne de l'élève est égale à 20, il aura comme appréciation : "Excellent".
+                </ul>      
+                     <p> Afficher la moyenne et l'appréciation de l'élève.</p>          
+            </div>
+         </div>
+        </div>
+       </div>
+     </div>
+        <div class="container"> 
+               <h2>Formulaire de Calcul d'une moyenne d'un élève </h2>   
+            <form class="" method ="post" action="index.html">
+                <div class = "form-group">
+                    <label for ="note1"> Histoire</label>
+                    <input type = "text" class= "form-control" id = "note1"placeholder = "Entrez une note"/> 
+                </div>
+                <div class = "form-group">
+                    <label for ="note2"> Français </label>
+                    <input type = "text" class= "form-control" id = "note2"placeholder = "Entrez une note"/> 
+                </div>
+                <div class = "form-group">
+                    <label for ="note3"> Chimie</label>
+                    <input type = "text" class= "form-control" id = "note3"placeholder = "Entrez une note"/>  
+                </div>
+                <div class = "form-group">
+                    <label for ="note4"> Sport</label>
+                    <input type = "text" class= "form-control" id = "note4"placeholder = "Entrez une note"/> 
+                </div>
+                <div class = "form-group">
+                    <label for ="note5"> HTML5</label>
+                    <input type = "text" class= "form-control" id = "note5"placeholder = "Entrez une note"/> 
+                </div>
+                <button class = "btn btn-primary mt-2" type = "button" name = "button" id = "Calculate">Calculatrice la moyenne</button>
+                </form >
+              </div >
+            </div>
+        </div>
+        <div class="container text-center pt-2">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+        <img src="assets/image/girl.png" alt="girl">
+                </div>
+            </div>
+        </div>
+  
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script>
+  
+    $(function calculer(){
+    $('#calculer').click(function() {// fonction calculer 
+            var note1 = $('#note1').val();
+            var note2 = $('#note2').val();
+            var note3 = $('#note3').val();
+            var note4 = $('#note4').val();
+            var note5 = $('#note5').val();
+            
+            if  ( note1  &&  note2  &&  note3  &&  note4  &&  note5  &&  parseFloat ( note1 ) <= 20  &&  parseFloat ( note2 ) <= 20  &&  parseFloat ( note3 ) <= 20  &&  parseFloat ( note4 ) <= 20  &&  parseFloat ( note5 ) <= 20 ) {
+
+               var average = (parseFloat (note1) + parseFloat (note2 )+ parseFloat (note3) + parseFloat (note4)+ parseFloat (note5) ) /5;
+                    
+            if  ( moyenne  <  10 ) {
+                var  message  =  'Votre moyenne est de:' + average  + ': En dessous de la moyenne' ;
+                var  alertBg  =  'danger' ;
+                }  else  if  ( average  >=  10  &&  average < 13 ) {
+                var  message  =  'Votre moyenne est de:' + average  + ': Moyen' ;
+                var  alertBg  =  'avertissement' ;
+                }  else  if  ( average  >=  13  &&  average < 16 ) {
+                var  message  =  'Votre moyenne est de:'  + average + ': Bien' ;
+                var  alertBg  =  'info' ;
+                }  else  if  ( average  >=  16  &&  average < 20 ) {
+                var  message  =  'Votre moyenne est de:'  + average + ': Très bien' ;
+                var  alertBg  =  'succès' ;
+                }  else  if  ( moyenne  ==  20 ) {
+                var  message  =  'Votre moyenne est de:' + average + ': Excellent' ;
+                var  alertBg  =  'primaire' ;
+                }
+     
+        $('# réponse').supprimer();
+        $('.jumbotron').after('<div class = "alert alert-' + alertBg + '" role = "alert" id = "response">' + message + '</div>'  ) ;
+            }else{
+            alert('Entrer toutes vos notes');
+      }
+    });
+  });
+  </script>
+
+
+
+
+</body>
+</html>
